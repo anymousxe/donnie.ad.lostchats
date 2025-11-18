@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #0a0a0a;
+}
+
+.header {
+    padding: 16px;
+    background: #000;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #666;
+}
+
+.status {
+    font-size: 8px;
+    color: #ff3333;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #333 transparent;
+}
+
+.messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.message-meta {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+.message-sender {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ad .message-sender {
+    color: #ff6b6b;
+}
+
+.donnie .message-sender {
+    color: #4a90e2;
+}
+
+.message-text {
+    font-size: 14px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.ad .message-text {
+    color: #e8a0a0;
+}
+
+.donnie .message-text {
+    color: #a0c0ff;
+}
+
+.message.ad {
+    margin-right: 30px;
+}
+
+.message.donnie {
+    margin-left: 30px;
+}
+
